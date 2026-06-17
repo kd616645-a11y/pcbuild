@@ -1,0 +1,493 @@
+﻿<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Linh Kiện PC - Cửa Hàng Linh Kiện Máy Tính</title>
+    <link rel="stylesheet" href="src/css/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- NAVIGATION MENU -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-logo">
+                <i class="fas fa-microchip"></i>
+                <span>Linh Kiện PC</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#home" class="nav-link">Trang Chủ</a></li>
+                <li><a href="#menu" class="nav-link">Sản Phẩm</a></li>
+                <li><a href="#gallery" class="nav-link">Bộ Sưu Tập</a></li>
+                <li><a href="#booking" class="nav-link">Đặt Hàng</a></li>
+                <li><a href="#contact" class="nav-link">Liên Hệ</a></li>
+                <li id="accountNavItem" class="account-item"><button class="account-btn" onclick="openLoginModal()"><i class="fas fa-user"></i> Đăng Nhập</button></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Cửa Hàng Linh Kiện Máy Tính</h1>
+            <p>Linh kiện chính hãng, giá tốt, hỗ trợ lắp ráp nhanh chóng.</p>
+            <button class="btn btn-primary" onclick="document.getElementById('menu').scrollIntoView({behavior: 'smooth'})">Xem Sản Phẩm</button>
+        </div>
+    </section>
+
+    <!-- MENU SECTION -->
+    <section id="menu" class="menu">
+        <div class="container">
+            <h2>Sản Phẩm Linh Kiện</h2>
+            <div class="menu-filters">
+                <button class="filter-btn active" data-filter="all">Tất Cả</button>
+                <button class="filter-btn" data-filter="cpu">CPU</button>
+                <button class="filter-btn" data-filter="gpu">GPU</button>
+                <button class="filter-btn" data-filter="ram">RAM</button>
+                <button class="filter-btn" data-filter="storage">Lưu Trữ</button>
+                <button class="filter-btn" data-filter="accessory">Phụ Kiện</button>
+            </div>
+            
+            <div class="menu-grid">
+                <div class="menu-item" data-category="cpu">
+                    <div class="menu-icon">
+                        <i class="fas fa-microchip"></i>
+                    </div>
+                    <img src="src/img/ryzen9-7950x.jpg" alt="CPU" loading="lazy" class="img-lazy" onerror="this.src='https://via.placeholder.com/200?text=Ryzen+7+7800X3D'">
+                    <h3><i class="fas fa-microchip"></i> AMD Ryzen 7 7800X3D</h3>
+                    <p>Hiệu năng cao cho game và thiết kế.</p>
+                    <span class="price">9,200,000 VNĐ</span>
+                    <button class="btn btn-small" onclick="addToCart('AMD Ryzen 7 7800X3D', 9200000)"><i class="fas fa-shopping-cart"></i> Thêm Vào Giỏ</button>
+                </div>
+
+                <div class="menu-item" data-category="gpu">
+                    <div class="menu-icon">
+                        <i class="fas fa-video"></i>
+                    </div>
+                    <img src="src/img/rtx4070.jpg" alt="GPU" loading="lazy" class="img-lazy" onerror="this.src='https://via.placeholder.com/200?text=RTX+4070'">
+                    <h3><i class="fas fa-video"></i> NVIDIA RTX 4070</h3>
+                    <p>Đồ họa mượt mà, ray-tracing sống động.</p>
+                    <span class="price">15,800,000 VNĐ</span>
+                    <button class="btn btn-small" onclick="addToCart('NVIDIA RTX 4070', 15800000)"><i class="fas fa-shopping-cart"></i> Thêm Vào Giỏ</button>
+                </div>
+
+                <div class="menu-item" data-category="gpu">
+                    <div class="menu-icon">
+                        <i class="fas fa-video"></i>
+                    </div>
+                    <img src="src/img/rx7900xt.jpg" alt="GPU" loading="lazy" class="img-lazy" onerror="this.src='https://via.placeholder.com/200?text=RX+7900+XT'">
+                    <h3><i class="fas fa-video"></i> AMD Radeon RX 7900 XT</h3>
+                    <p>Hiệu suất chơi game cao và VRAM lớn.</p>
+                    <span class="price">18,500,000 VNĐ</span>
+                    <button class="btn btn-small" onclick="addToCart('AMD Radeon RX 7900 XT', 18500000)"><i class="fas fa-shopping-cart"></i> Thêm Vào Giỏ</button>
+                </div>
+
+                <div class="menu-item" data-category="gpu">
+                    <div class="menu-icon">
+                        <i class="fas fa-video"></i>
+                    </div>
+                    <img src="src/img/rtx4080.jpg" alt="GPU" loading="lazy" class="img-lazy" onerror="this.src='https://via.placeholder.com/200?text=RTX+4080'">
+                    <h3><i class="fas fa-video"></i> NVIDIA RTX 4080</h3>
+                    <p>Đồ họa siêu cao cấp, sẵn sàng cho 4K và sáng tạo nội dung.</p>
+                    <span class="price">26,900,000 VNĐ</span>
+                    <button class="btn btn-small" onclick="addToCart('NVIDIA RTX 4080', 26900000)"><i class="fas fa-shopping-cart"></i> Thêm Vào Giỏ</button>
+                </div>
+
+                <div class="menu-item" data-category="cpu">
+                    <div class="menu-icon">
+                        <i class="fas fa-microchip"></i>
+                    </div>
+                    <img src="src/img/intel-i9-13900k.jpg" alt="CPU" loading="lazy" class="img-lazy" onerror="this.src='https://via.placeholder.com/200?text=Intel+i9-13900K'">
+                    <h3><i class="fas fa-microchip"></i> Intel Core i9-13900K</h3>
+                    <p>Hiệu năng đa nhân mạnh mẽ cho mọi tác vụ.</p>
+                    <span class="price">12,800,000 VNĐ</span>
+                    <button class="btn btn-small" onclick="addToCart('Intel Core i9-13900K', 12800000)"><i class="fas fa-shopping-cart"></i> Thêm Vào Giỏ</button>
+                </div>
+
+                <div class="menu-item" data-category="cpu">
+                    <div class="menu-icon">
+                        <i class="fas fa-microchip"></i>
+                    </div>
+                    <img src="src/img/ryzen9-7950x.jpg" alt="CPU" loading="lazy" class="img-lazy" onerror="this.src='https://via.placeholder.com/200?text=Ryzen+9+7950X'">
+                    <h3><i class="fas fa-microchip"></i> AMD Ryzen 9 7950X</h3>
+                    <p>Hiệu năng số nhân cao cho dựng phim và game nặng.</p>
+                    <span class="price">14,300,000 VNĐ</span>
+                    <button class="btn btn-small" onclick="addToCart('AMD Ryzen 9 7950X', 14300000)"><i class="fas fa-shopping-cart"></i> Thêm Vào Giỏ</button>
+                </div>
+
+                <div class="menu-item" data-category="ram">
+                    <div class="menu-icon">
+                        <i class="fas fa-memory"></i>
+                    </div>
+                    <img src="src/img/ram-fury.jpg" alt="RAM" loading="lazy" class="img-lazy" onerror="this.src='https://via.placeholder.com/200?text=RAM+DDR5+32GB'">
+                    <h3><i class="fas fa-memory"></i> RAM DDR5 32GB</h3>
+                    <p>Tốc độ cao, đa nhiệm mượt mà.</p>
+                    <span class="price">2,450,000 VNĐ</span>
+                    <button class="btn btn-small" onclick="addToCart('RAM DDR5 32GB', 2450000)"><i class="fas fa-shopping-cart"></i> Thêm Vào Giỏ</button>
+                </div>
+
+                <div class="menu-item" data-category="storage">
+                    <div class="menu-icon">
+                        <i class="fas fa-hdd"></i>
+                    </div>
+                    <img src="src/img/wd-black-sn770.jpg" alt="SSD" loading="lazy" class="img-lazy" onerror="this.src='https://via.placeholder.com/200?text=SSD+NVMe+1TB'">
+                    <h3><i class="fas fa-hdd"></i> SSD NVMe 1TB</h3>
+                    <p>Khởi động nhanh, tải ứng dụng tức thời.</p>
+                    <span class="price">1,950,000 VNĐ</span>
+                    <button class="btn btn-small" onclick="addToCart('SSD NVMe 1TB', 1950000)"><i class="fas fa-shopping-cart"></i> Thêm Vào Giỏ</button>
+                </div>
+
+                <div class="menu-item" data-category="cpu">
+                    <div class="menu-icon">
+                        <i class="fas fa-microchip"></i>
+                    </div>
+                    <img src="src/img/rog-crosshair.webp" alt="Mainboard" loading="lazy" class="img-lazy" onerror="this.src='https://via.placeholder.com/200?text=Mainboard+ATX+Z690'">
+                    <h3><i class="fas fa-microchip"></i> Mainboard ATX Z690</h3>
+                    <p>Tương thích đa nền tảng, kết nối đầy đủ.</p>
+                    <span class="price">4,300,000 VNĐ</span>
+                    <button class="btn btn-small" onclick="addToCart('Mainboard ATX Z690', 4300000)"><i class="fas fa-shopping-cart"></i> Thêm Vào Giỏ</button>
+                </div>
+
+                <div class="menu-item" data-category="accessory">
+                    <div class="menu-icon">
+                        <i class="fas fa-plug"></i>
+                    </div>
+                    <img src="../img/download (7).jpg" alt="PSU 750W Gold" loading="lazy" class="img-lazy" onerror="this.src='https://via.placeholder.com/200?text=PSU+750W+Gold'">
+                    <h3><i class="fas fa-plug"></i> PSU 750W Gold</h3>
+                    <p>Ổn định nguồn, bảo vệ linh kiện tối ưu.</p>
+                    <span class="price">1,650,000 VNĐ</span>
+                    <button class="btn btn-small" onclick="addToCart('PSU 750W Gold', 1650000)"><i class="fas fa-shopping-cart"></i> Thêm Vào Giỏ</button>
+                </div>
+
+                <div class="menu-item" data-category="accessory">
+                    <div class="menu-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <img src="../img/download (8).jpg" alt="Case Gaming RGB" loading="lazy" class="img-lazy" onerror="this.src='https://via.placeholder.com/200?text=Case+Gaming+RGB'">
+                    <h3><i class="fas fa-shield-alt"></i> Case Gaming RGB</h3>
+                    <p>Thiết kế hiện đại, hiệu suất tản nhiệt tốt.</p>
+                    <span class="price">2,100,000 VNĐ</span>
+                    <button class="btn btn-small" onclick="addToCart('Case Gaming RGB', 2100000)"><i class="fas fa-shopping-cart"></i> Thêm Vào Giỏ</button>
+                </div>
+
+                <div class="menu-item" data-category="accessory">
+                    <div class="menu-icon">
+                        <i class="fas fa-fan"></i>
+                    </div>
+                    <img src="../img/2.webp" alt="Tản Nhiệt CPU" loading="lazy" class="img-lazy" onerror="this.src='https://via.placeholder.com/200?text=Cooler+CPU'">
+                    <h3><i class="fas fa-fan"></i> Tản Nhiệt CPU</h3>
+                    <p>Giữ CPU mát mẻ ngay cả khi tải cao.</p>
+                    <span class="price">850,000 VNĐ</span>
+                    <button class="btn btn-small" onclick="addToCart('Tản Nhiệt CPU', 850000)"><i class="fas fa-shopping-cart"></i> Thêm Vào Giỏ</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- GALLERY SECTION -->
+    <section id="gallery" class="gallery">
+        <div class="container">
+            <h2>Bộ Sưu Tập Linh Kiện</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="src/img/intel-i9-13900k.jpg" alt="CPU hiệu năng" loading="lazy" class="img-lazy" onerror="this.src='https://via.placeholder.com/300x200?text=Intel+i9'">
+                    <div class="gallery-overlay">
+                        <h3>CPU Hiệu Năng</h3>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="src/img/rtx4070.jpg" alt="GPU mạnh mẽ" loading="lazy" class="img-lazy" onerror="this.src='https://via.placeholder.com/300x200?text=RTX+4070'">
+                    <div class="gallery-overlay">
+                        <h3>GPU Mạnh Mẽ</h3>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="src/img/ram-fury.jpg" alt="Bộ nhớ RAM" loading="lazy" class="img-lazy" onerror="this.src='https://via.placeholder.com/300x200?text=RAM'">
+                    <div class="gallery-overlay">
+                        <h3>Bộ Nhớ RAM</h3>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="src/img/wd-black-sn770.jpg" alt="Ổ cứng SSD" loading="lazy" class="img-lazy" onerror="this.src='https://via.placeholder.com/300x200?text=SSD'">
+                    <div class="gallery-overlay">
+                        <h3>Ổ Cứng SSD</h3>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="src/img/rog-crosshair.webp" alt="Mainboard cao cấp" loading="lazy" class="img-lazy" onerror="this.src='https://via.placeholder.com/300x200?text=Mainboard'">
+                    <div class="gallery-overlay">
+                        <h3>Mainboard Cao Cấp</h3>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="src/img/shopping.webp" alt="Dàn PC cao cấp" loading="lazy" class="img-lazy" onerror="this.src='https://via.placeholder.com/300x200?text=PC+Setup'">
+                    <div class="gallery-overlay">
+                        <h3>Dàn PC Cao Cấp</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- BOOKING SECTION -->
+    <section id="booking" class="booking">
+        <div class="container">
+            <h2>Đặt Hàng & Thanh Toán</h2>
+            <div class="booking-content">
+                <div class="booking-form">
+                    <h3>Thông Tin Đặt Hàng</h3>
+                    <form id="bookingForm">
+                        <input type="text" name="name" id="bookingName" placeholder="Tên của bạn" required>
+                        <input type="email" name="email" id="bookingEmail" placeholder="Email" required>
+                        <input type="tel" name="phone" id="bookingPhone" placeholder="Số điện thoại" required>
+                        <input type="text" name="address" id="bookingAddress" placeholder="Địa chỉ giao hàng" required>
+                        <textarea name="notes" id="bookingNotes" placeholder="Ghi chú thêm..." rows="4"></textarea>
+                        <button type="submit" class="btn btn-primary">Gửi Yêu Cầu</button>
+                    </form>
+                </div>
+                <div id="cart-container">
+                    <h3>Giỏ hàng (<span id="cart-count">0</span>)</h3>
+                    <div id="cart-items"></div>
+
+                    <hr>
+                    <p>Số dư hiện tại: <strong id="balance-display">0</strong> VNĐ</p>
+
+                    <div style="display:flex; gap:8px; align-items:center; margin:8px 0;">
+                        <input type="number" id="topup-amount" placeholder="Nhập số tiền nạp (VNĐ)" style="padding:6px; flex:1;" />
+                        <button class="btn" onclick="handleTopUp()">Nạp tiền</button>
+                        <button class="btn" onclick="quickTopUp(50000)">Nạp 50k</button>
+                        <button class="btn" onclick="quickTopUp(100000)">Nạp 100k</button>
+                    </div>
+
+                    <h4>Tổng tiền: <span id="cart-total">0</span> VNĐ</h4>
+
+                    <div style="display:flex; gap:8px;">
+                        <button class="btn btn-primary" onclick="handleCheckout()">Xác nhận mua</button>
+                        <button class="btn" onclick="clearCart()">Xóa giỏ hàng</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ADMIN PANEL - Chỉ hiện khi là Admin -->
+    <section id="admin-panel" style="display: none; margin: 20px; padding: 20px; background: #f8f9fa; border: 2px solid #28a745; border-radius: 10px;">
+        <div class="container">
+            <h2>🔧 Admin Management</h2>
+            
+            <h3>Thêm sản phẩm mới</h3>
+            <div style="display: grid; gap: 10px; max-width: 500px;">
+                <input type="text" id="prod-id" placeholder="Mã sản phẩm (ví dụ: SP001)" />
+                <input type="text" id="prod-name" placeholder="Tên sản phẩm" />
+                <input type="number" id="prod-price" placeholder="Giá (VNĐ)" />
+                <input type="text" id="prod-image" placeholder="Link ảnh sản phẩm" />
+                <textarea id="prod-desc" placeholder="Mô tả ngắn" rows="3"></textarea>
+                
+                <button onclick="addNewProduct()" style="padding: 12px; background: #28a745; color: white; border: none; border-radius: 8px; font-size: 16px;">
+                    ➕ Thêm sản phẩm vào kho
+                </button>
+            </div>
+
+            <hr>
+            <h3>Danh sách sản phẩm hiện có</h3>
+            <div id="admin-product-list"></div>
+        </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2>Liên Hệ Với Chúng Tôi</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <h3>Địa Chỉ</h3>
+                        <p>123 Đường Lê Lợi, Quận 1, TP.HCM</p>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <h3>Điện Thoại</h3>
+                        <p>+84 28 3821 6789</p>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <h3>Email</h3>
+                        <p>support@pclin.com</p>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-clock"></i>
+                        <h3>Giờ Làm Việc</h3>
+                        <p>Thứ 2 - Chủ Nhật: 8:00 - 20:00</p>
+                        <p>Hỗ trợ trực tuyến 24/7</p>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <h3>Gửi Tin Nhắn</h3>
+                    <form id="contactForm">
+                        <input type="text" name="name" id="contactName" placeholder="Tên của bạn" required>
+                        <input type="email" name="email" id="contactEmail" placeholder="Email" required>
+                        <input type="text" name="subject" id="contactSubject" placeholder="Chủ đề" required>
+                        <textarea name="message" id="contactMessage" placeholder="Tin nhắn..." rows="5" required></textarea>
+                        <button type="submit" class="btn btn-primary">Gửi</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 Linh Kiện PC. Tất cả quyền được bảo lưu.</p>
+            <div class="social-links">
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- LOGIN MODAL -->
+    <div id="loginModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2><i class="fas fa-sign-in-alt"></i> Đăng Nhập</h2>
+                <button class="modal-close" onclick="closeLoginModal()">&times;</button>
+            </div>
+            <form id="loginForm" onsubmit="handleLogin(event)">
+                <div class="form-group">
+                    <label for="loginEmail"><i class="fas fa-envelope"></i> Email Gmail:</label>
+                    <input type="text" id="loginEmail" placeholder="Nhập Gmail của bạn" required>
+                </div>
+                <div class="form-group">
+                    <label for="loginPassword"><i class="fas fa-lock"></i> Mật Khẩu:</label>
+                    <input type="password" id="loginPassword" placeholder="Nhập mật khẩu" required>
+                    <button type="button" class="toggle-password" onclick="togglePasswordVisibility()">
+                        <i class="fas fa-eye"></i>
+                    </button>
+                </div>
+                <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 15px;">
+                    <i class="fas fa-sign-in-alt"></i> Đăng Nhập
+                </button>
+            </form>
+            <div class="modal-divider">hoặc</div>
+            <div class="modal-footer">
+                <p>Chưa có tài khoản? <button type="button" class="link-btn" onclick="switchToRegister()">Đăng Ký</button></p>
+                <p><button type="button" class="link-btn" onclick="switchToForgot()">Quên Mật Khẩu?</button></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- REGISTER MODAL -->
+    <div id="registerModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2><i class="fas fa-user-plus"></i> Đăng Ký</h2>
+                <button class="modal-close" onclick="closeLoginModal()">&times;</button>
+            </div>
+            <form id="registerForm" onsubmit="handleRegister(event)">
+                <div class="form-group">
+                    <label for="regName"><i class="fas fa-user"></i> Họ Tên:</label>
+                    <input type="text" id="regName" placeholder="Nhập họ tên" required>
+                </div>
+                <div class="form-group">
+                    <label for="regEmail"><i class="fas fa-envelope"></i> Email:</label>
+                    <input type="email" id="regEmail" placeholder="Nhập email" required>
+                </div>
+                <div class="form-group">
+                    <label for="regPhone"><i class="fas fa-phone"></i> Số Điện Thoại:</label>
+                    <input type="tel" id="regPhone" placeholder="Nhập số điện thoại" required>
+                </div>
+                <div class="form-group">
+                    <label for="regPassword"><i class="fas fa-lock"></i> Mật Khẩu:</label>
+                    <input type="password" id="regPassword" placeholder="Nhập mật khẩu" required>
+                </div>
+                <div class="form-group">
+                    <label for="regConfirmPassword"><i class="fas fa-lock"></i> Xác Nhận Mật Khẩu:</label>
+                    <input type="password" id="regConfirmPassword" placeholder="Xác nhận mật khẩu" required>
+                </div>
+                <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 15px;">
+                    <i class="fas fa-user-plus"></i> Đăng Ký
+                </button>
+            </form>
+            <div class="modal-footer">
+                <p>Đã có tài khoản? <button type="button" class="link-btn" onclick="switchToLogin()">Đăng Nhập</button></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- FORGOT PASSWORD MODAL -->
+    <div id="forgotModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2><i class="fas fa-key"></i> Quên Mật Khẩu</h2>
+                <button class="modal-close" onclick="closeLoginModal()">&times;</button>
+            </div>
+            <form id="forgotForm" onsubmit="handleForgot(event)">
+                <p class="form-hint">Nhập email hoặc số điện thoại đăng ký để nhận hướng dẫn đặt lại mật khẩu</p>
+                <div class="form-group">
+                    <label for="forgotEmail"><i class="fas fa-envelope"></i> Email hoặc Số Điện Thoại:</label>
+                    <input type="text" id="forgotEmail" placeholder="Nhập email hoặc số điện thoại" required>
+                </div>
+                <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 15px;">
+                    <i class="fas fa-paper-plane"></i> Gửi Hướng Dẫn
+                </button>
+            </form>
+            <div class="modal-footer">
+                <p><button type="button" class="link-btn" onclick="switchToLogin()">Quay Lại Đăng Nhập</button></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- VERIFY EMAIL MODAL -->
+    <div id="verifyModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2><i class="fas fa-check-circle"></i> Xác Minh Gmail</h2>
+                <button class="modal-close" onclick="closeVerifyModal()">&times;</button>
+            </div>
+            <form id="verifyForm" onsubmit="handleVerify(event)">
+                <p>Để tiếp tục sử dụng trang web, vui lòng xác minh email Gmail của bạn một lần.</p>
+                <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 15px;">
+                    <i class="fas fa-check"></i> Xác Minh Ngay
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Thêm Firebase SDK trước khi dùng -->
+    <script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-firestore-compat.js"></script>
+
+    <script>
+    // Config của bạn
+    const firebaseConfig = {
+        apiKey: "AIzaSyD_hmfZqB4TJBcrIqfgvMSJyIIrkxSE8Eg",
+        authDomain: "test2-9f83d.firebaseapp.com",
+        projectId: "test2-9f83d",
+        storageBucket: "test2-9f83d.firebasestorage.app",
+        messagingSenderId: "64061583386",
+        appId: "1:64061583386:web:7b44f5ad80eed8bc4b61a3",
+        measurementId: "G-FHTTLR8ZSP"
+    };
+
+    // Khởi tạo Firebase
+    firebase.initializeApp(firebaseConfig);
+
+    // Khởi tạo Auth
+    const auth = firebase.auth();
+    // Khởi tạo Firestore
+    const db = firebase.firestore();
+    </script>
+
+    <script src="src/js/cafe.js"></script>
+</body>
+</html>
+ 
